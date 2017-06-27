@@ -11,7 +11,7 @@ feature 'Visitor visit homepage' do
   scenario 'and view recipe' do
     #cria os dados necessários
     recipe = Recipe.create(title: 'Bolo de cenoura', recipe_type: 'Sobremesa',
-                          cuisine: 'Brasileira', difficulty: 'Médio', 
+                          cuisine: 'Brasileira', difficulty: 'Médio',
                           cook_time: 60)
 
     # simula a ação do usuário
@@ -44,11 +44,7 @@ feature 'Visitor visit homepage' do
     expect(page).to have_css('li', text: recipe.cuisine)
     expect(page).to have_css('li', text: recipe.difficulty)
     expect(page).to have_css('li', text: "#{recipe.cook_time} minutos")
+    expect(page).to have_css('li', text: recipe.ingredients)
 
-    expect(page).to have_css('h1', text: another_recipe.title)
-    expect(page).to have_css('li', text: another_recipe.recipe_type)
-    expect(page).to have_css('li', text: another_recipe.cuisine)
-    expect(page).to have_css('li', text: another_recipe.difficulty)
-    expect(page).to have_css('li', text: "#{another_recipe.cook_time} minutos")
   end
 end

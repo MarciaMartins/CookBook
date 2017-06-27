@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
       <h1>CookBook</h1>
       <p>Bem-vindo ao maior livro de receitas online</p>
       <section>
         <% @recipes.each do |recipe| %>
-          <h1><%= recipe.title %></h1>
+          <h1><%= link_to recipe.title, recipe %></h1>
           <ul>
             <li><%= recipe.recipe_type %></li>
             <li><%= recipe.cuisine %></li>
@@ -18,6 +12,3 @@
           </ul>
         <%end%>
       </section>
-
-  </body>
-</html>
