@@ -8,8 +8,9 @@
     <%= f.text_field :recipe_type%>
   </div>
   <div class="">
-    <%= f.label :cuisine, 'Cozinha'%>
-    <%= f.text_field :cuisine%>
+    <%= f.label :cuisine_id, 'Cozinha'%>
+    <%= f.collection_select(:cuisine_id, @cuisines, :id, :name)%>
+
   </div>
   <div class="">
     <%= f.label :difficulty, 'Dificuldade'%>
